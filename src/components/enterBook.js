@@ -70,32 +70,33 @@ class EnterBook extends React.Component{
 
                 <form onSubmit={this.handleSubmit}>
                     {/* Enter book details (name, author, summary) */}
+                    <label className="label">
+                        Book Title:
+                    </label>
                     <div className = "form-group">
-                        <label className="label">
-                            Book Title:
-                        </label>
-                        <input type="text" className="form-control" value={this.state.Title} onChange={this.handleChangeBookTitle}/>
+                        <input type="text" className="textarea" value={this.state.Title} onChange={this.handleChangeBookTitle}
+                                placeholder="Please enter the title of your book"/>
                     </div> {/* title */}
-
+                    <label className="label">
+                        Author:
+                    </label>
                     <div className = "form-group">
-                        <label className="label">
-                            Author:
-                        </label>
-                        <input type="text" className="form-control" value={this.state.Author} onChange={this.handleChangeBookAuthor}/>
+                        <input type="text" className="textarea" value={this.state.Author} onChange={this.handleChangeBookAuthor}
+                                placeholder="Please enter the author of your book"/>
                     </div> {/* author */}
-
+                    <label className="label">
+                        Book Summary:
+                    </label>
                     <div className = "form-group">
-                        <label className="label">
-                            Book Summary:
-                        </label>
-                        <textarea className="form-control" rows="6" value={this.state.Summary} onChange={this.handleChangeBookSummary}/>
+                        <textarea className="textarea" rows="6" value={this.state.Summary} onChange={this.handleChangeBookSummary}
+                                placeholder="Please enter the summary of your book"/>
                     </div> {/* summary */}
-
+                    <label className="label">
+                        Genres:
+                    </label>
                     <div className = "form-group">
-                        <label className="label">
-                            Genres:
-                        </label>
-                        <textarea className="form-control" rows="3" value={this.state.Genres} onChange={this.handleChangeBookGenres}/>
+                        <textarea className="textarea" rows="3" cols="10" value={this.state.Genres} onChange={this.handleChangeBookGenres}
+                                placeholder="Please enter the genres of your book"/>
                     </div> {/* genres */}
 
                     {/* select category the book is in (finished, reading, will read) */}

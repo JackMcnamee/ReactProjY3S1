@@ -26,3 +26,7 @@
   color: rgb(255, 255, 255);
   font-size: 18px;
 }
+
+.textarea{
+  width: 100ch;
+}
