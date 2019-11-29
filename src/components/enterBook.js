@@ -66,7 +66,7 @@ class EnterBook extends React.Component{
     render(){
         return(
             <div>
-                <h2 style={{color:"white"}}>Please Enter the Books Details</h2>
+                <h2 className="header">Please Enter the Books Details</h2>
 
                 <form onSubmit={this.handleSubmit}>
                     {/* Enter book details (name, author, summary) */}
@@ -102,7 +102,7 @@ class EnterBook extends React.Component{
                     {/* select category the book is in (finished, reading, will read) */}
                     <div className = "radio">
                         <p className="label">
-                            Please Select the Category the Book Belongs to:
+                            Please select the category the book belongs to:
                         </p>
                     </div>
 

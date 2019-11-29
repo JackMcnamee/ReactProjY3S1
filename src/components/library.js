@@ -37,7 +37,7 @@ class Library extends React.Component{
     render(){
         return(
             <div>
-                <h2 style={{color:"white"}}>Your Library</h2>
+                <h2 className="header">Your Library</h2>
                 {/* outputs books */}
                 <Books myBooks={this.state.books}
                 ReloadDataMethod={this.ReloadDataMethod}></Books>

@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 4000
+const port = 4000 // port server uses
 const path = require('path');
 const bodyParser = require('body-parser'); // bodyParser for POST
 const cors = require('cors');
@@ -39,9 +39,8 @@ const bookSchema = new Schema({
 // model of bookSchema
 const BookModel = mongoose.model('book', bookSchema);
 
-
-// get request, URL, req(request), res(response) - res to sender "Hello World"
-app.get('/', (req, res) => res.send('Hello World!'))
+// get request, URL, req(request), res(response)
+app.get('/', (req, res) => res.send('My Data Rep Project'))
 
 app.get('/whatever', (req, res) => {
     res.send('whatever')
@@ -77,11 +76,13 @@ app.get('/api/books', (req, res) => {
 app.get('/api/books/:id', (req, res)=>{
     console.log(req.params.id);
 
+    // Object - BookModel
     BookModel.findById(req.params.id, (error,data)=>{
         res.json(data);
     })
 })
 
+// deletes book
 app.delete('/api/books/:id', (req, res)=>{
     console.log(req.params.id);
 
@@ -91,10 +92,12 @@ app.delete('/api/books/:id', (req, res)=>{
         })
 })
 
+// edit book
 app.put('/api/books/:id',(req,res)=>{
     console.log("Edit: "+req.params.id);
     console.log(req.body);
     
+    // body passes up parameters
     BookModel.findByIdAndUpdate(req.params.id,
         req.body,
         {new:true},
@@ -103,6 +106,7 @@ app.put('/api/books/:id',(req,res)=>{
         })
 })
 
+// api books
 app.get('/api/books/:id', (req,res)=>{
     console.log("GET: "+req.params.id);
 
@@ -111,6 +115,7 @@ app.get('/api/books/:id', (req,res)=>{
     })
 })
 
+// writes book variables to terminal
 app.post('/api/books', (req,res)=>{
     console.log('Post request Successful');
     console.log(req.body.title);
@@ -129,6 +134,7 @@ app.post('/api/books', (req,res)=>{
 
     res.json('post recieved!');
 })
+
 app.get('/hello/:name', (req, res) => {
     console.log(req.params.name);
     res.send('Hello ' + req.params.name)
